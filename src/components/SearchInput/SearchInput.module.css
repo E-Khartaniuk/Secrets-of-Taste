@@ -1,0 +1,39 @@
+.inputForm {
+  display: inline;
+}
+
+.inputSearch {
+  padding: 5px;
+  border-radius: 4px;
+  color: white;
+  background-color: #fe724c;
+  outline: none;
+  border: solid 1px #fcb19c;
+  transition: border 0.1s ease-in;
+}
+
+.inputSearch:focus {
+  border: solid 1px #ffffff;
+  background-color: #fa6b43;
+}
+
+.inputSearch:hover {
+  border: solid 1px #ffffff;
+  background-color: #fa6b43;
+}
+
+.searchBtn {
+  margin-left: 14px;
+  padding: 5px;
+  color: white;
+  border-radius: 4px;
+  background-color: #fe724c;
+  border: solid 1px #fcb19c;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.searchBtn:hover {
+  color: #fe724c;
+  background-color: white;
+}

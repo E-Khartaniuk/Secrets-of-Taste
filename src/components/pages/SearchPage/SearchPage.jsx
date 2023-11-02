@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import css from './DishesList.module.css';
 import FoodCard from 'components/FoodCard/FoodCard';
 import fetchData from 'components/Utils/FetchData';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import css from './SearchPage.module.css';
 
-function DishesList() {
+function SearchPage() {
   const navigate = useNavigate();
-  const [food, setFood] = useState([]);
+  const [queryList, setSueryList] = useState([]);
+  const { query } = useParams();
 
   useEffect(() => {
-    fetchData().then(res => setFood(res.data.results));
-  }, []);
+    fetchData(query).then(res => setSueryList(res.data.results));
+  }, [query]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
   };
-
   return (
     <ul className={css.dishesList}>
-      {food.map(oneDish => {
+      {queryList.map(oneDish => {
         return (
           <FoodCard
             key={oneDish.id}
@@ -31,4 +31,4 @@ function DishesList() {
   );
 }
 
-export default DishesList;
+export default SearchPage;

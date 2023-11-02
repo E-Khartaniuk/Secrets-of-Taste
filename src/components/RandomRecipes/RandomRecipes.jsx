@@ -26,6 +26,7 @@ function RandomRecipes() {
         food.map(oneDish => {
           return (
             <FoodCard
+              key={oneDish.id}
               cardInfo={oneDish}
               className={cardCSS.oneDishCard}
               handleOpenFullRecipe={handleOpenFullRecipe}

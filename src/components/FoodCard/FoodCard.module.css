@@ -1,9 +1,20 @@
 .oneDishCard {
-  width: 300px;
-  height: 500px;
+  width: 200px;
+  height: 300px;
   border-style: solid;
+  border-color: rgb(204, 204, 204);
   border-width: 1px;
   margin-top: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.oneDishCard:hover {
+  color: white;
+  background-color: #fe724c;
 }
 
 .cardTitle {
@@ -20,6 +31,11 @@
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+  transition: width 0.3s ease;
+}
+
+.oneDishCard:hover img {
+  width: 94%;
 }
 
 .cardBtn {
