@@ -1,0 +1,17 @@
+.categoryButton {
+  background-color: rgb(245, 245, 245);
+  font-size: 34px;
+  width: 100px;
+  height: 140px;
+  border-radius: 50px;
+  border: none;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.categoryButton:focus {
+  background-color: #fe724c;
+}
+.categoryButton:hover {
+  background-color: #fe724c;
+}

@@ -1,0 +1,19 @@
+/* .mainContainer {
+  width: 1440px;
+  margin: 0 auto;
+} */
+.linkContainer {
+  margin-left: 180px;
+}
+.navContainer {
+  height: 54px;
+  padding-top: 10px;
+  background-color: #fe724c;
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  margin-right: 40px;
+}

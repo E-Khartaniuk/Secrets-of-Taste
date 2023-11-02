@@ -1,0 +1,64 @@
+.fullRecipeContainer {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ingredientImg {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+.recipeImg {
+  display: block;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.recipeProperty {
+  padding: 10px;
+  color: white;
+  background-color: rgb(255, 153, 58);
+  border-radius: 50px;
+  padding-left: 12px;
+}
+
+.recipePropertyComtainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+}
+
+.fullRecipeHeadContainer {
+  background-color: rgba(192, 226, 255, 0.096);
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px 20px;
+
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.ingridientListItem {
+  width: 450px;
+  background-color: rgb(255, 153, 58);
+  color: white;
+  border-radius: 50px;
+  padding-left: 12px;
+}
+
+.ingridientListItem:nth-last-child(2n) {
+  background-color: rgb(255, 153, 58);
+}
+
+.ingridientListItem:hover {
+  background-color: rgb(250, 143, 43);
+}

@@ -1,0 +1,40 @@
+/* .oneDishCard {
+  width: 300px;
+  height: 500px;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 10px;
+}
+
+.cardTitle {
+  width: 90%;
+  height: 60px;
+  padding: 10px;
+}
+
+.cardImg {
+  display: block;
+  width: 90%;
+
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardBtn {
+  border: none;
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 38px;
+  background-color: #fe724c;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.cardBtn:hover {
+  background-color: #e65730;
+} */
