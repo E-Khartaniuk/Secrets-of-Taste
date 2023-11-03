@@ -6,9 +6,14 @@ function SearchInput() {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
-  function navigateToSearchPage() {
+  function navigateToSearchPage(e) {
+    e.preventDefault();
     console.log('searchQuery', searchQuery);
     navigate(`/search/${searchQuery}`);
+  }
+
+  function getQuery(e) {
+    setSearchQuery(e.target.value);
   }
 
   return (
@@ -17,9 +22,7 @@ function SearchInput() {
         type="text"
         value={searchQuery}
         className={css.inputSearch}
-        onChange={e => {
-          setSearchQuery(e.target.value);
-        }}
+        onChange={getQuery}
       />
       <button
         type="button"

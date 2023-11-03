@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
 import SearchInput from 'components/SearchInput/SearchInput';
+import DropDownMenu from 'components/Menu/DropDownMenu';
 
 function SharedLayout() {
   return (
@@ -15,6 +16,7 @@ function SharedLayout() {
             <NavLink to="/contacts" className={css.navLink}>
               Contacts
             </NavLink>
+            <DropDownMenu></DropDownMenu>
             <SearchInput />
           </div>
         </nav>

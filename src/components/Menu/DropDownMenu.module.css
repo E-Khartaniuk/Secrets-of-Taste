@@ -1,0 +1,24 @@
+.menuControlBtn {
+  display: inline-block;
+
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.dopDownContainer {
+  position: relative;
+  display: inline;
+}
+
+.dropDownList {
+  padding-top: 8px;
+  margin-top: 12px;
+  position: absolute;
+  top: 4;
+  right: 0;
+
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid rgb(255, 153, 58);
+}
