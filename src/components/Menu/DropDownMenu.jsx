@@ -7,20 +7,18 @@ function DropDownMenu() {
   const handleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <div className={css.dopDownContainer}>
-      <button
-        onMouseEnter={handleOpen}
-        onMouseLeave={handleOpen}
-        className={css.menuControlBtn}
-      >
-        {' '}
-        Category
-      </button>
+    <div
+      onMouseEnter={handleOpen}
+      onMouseLeave={handleOpen}
+      className={css.dopDownContainer}
+    >
+      Category
+      {/* <button className={css.menuControlBtn}> Category</button> */}
       {isOpen && (
         <ul className={css.dropDownList}>
-          <li>Vegan</li>
-          <li>Meat</li>
-          <li>Low caolries</li>
+          <li className={css.listItem}>Vegan</li>
+          <li className={css.listItem}>Meat</li>
+          <li className={css.listItem}>Low caolries</li>
         </ul>
       )}
     </div>
