@@ -1,5 +1,4 @@
 import React from 'react';
-// import DishesList from 'components/dishesList/DishesList';
 import CategoryButton from 'components/CategoryButton/CategoryButton';
 import RandomRecipes from 'components/RandomRecipes/RandomRecipes';
 

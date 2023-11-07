@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
     display: flex;
     position: fixed;
     justify-content: center;
@@ -27,8 +27,7 @@
     cursor: pointer;
   }
   
-  /* Стили для кнопки открытия модального окна */
-  button {
+   button {
     background-color: #008CBA;
     color: white;
     padding: 10px 20px;
@@ -38,4 +37,4 @@
   
   button:hover {
     background-color: #005f7f;
-  }
+  } */
