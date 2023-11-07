@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Secrets-of-Taste/static/css/main.a4fe6f99.css",
+    "main.js": "/Secrets-of-Taste/static/js/main.6bf362b9.js",
+    "index.html": "/Secrets-of-Taste/index.html",
+    "main.a4fe6f99.css.map": "/Secrets-of-Taste/static/css/main.a4fe6f99.css.map",
+    "main.6bf362b9.js.map": "/Secrets-of-Taste/static/js/main.6bf362b9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a4fe6f99.css",
+    "static/js/main.6bf362b9.js"
+  ]
+}
