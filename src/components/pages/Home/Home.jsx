@@ -12,11 +12,11 @@ function Home() {
         <section>
           <h1>Your diversity in food</h1>
           <CategoryButton>meat</CategoryButton>
+          <CategoryButton>grill</CategoryButton>
+          <CategoryButton>Cocktail</CategoryButton>
           <CategoryButton>vegan</CategoryButton>
-          <CategoryButton>diet</CategoryButton>
         </section>
         <section>
-          {/* <DishesList /> */}
           <RandomRecipes />
         </section>
       </div>

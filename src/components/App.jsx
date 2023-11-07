@@ -4,6 +4,7 @@ import SharedLayout from './SharedLayout/SharedLayout';
 import FullRecipe from './pages/FullRecipe/FullRecipe';
 import Contacts from './pages/Contacts/Contacts';
 import SearchPage from './pages/SearchPage/SearchPage';
+import DietPage from './pages/DIetPage/DietPage';
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Route path="contacts" element={<Contacts />} />
         <Route path="/recipe/:id" element={<FullRecipe />} />
         <Route path="search/:query" element={<SearchPage />} />
+        <Route path="diet/:query" element={<DietPage />} />
 
         <Route path="*" element={<Home />} />
       </Route>

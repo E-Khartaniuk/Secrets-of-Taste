@@ -1,16 +1,16 @@
 import FoodCard from 'components/FoodCard/FoodCard';
-import fetchData from 'components/Utils/FetchData';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import css from './SearchPage.module.css';
+import css from './DietPage.module.css';
+import FetchDiet from 'components/Utils/FetchDiet';
 
-function SearchPage() {
+function DietPage() {
   const navigate = useNavigate();
   const [queryList, setQueryList] = useState([]);
   const { query } = useParams();
 
   useEffect(() => {
-    fetchData(query).then(res => setQueryList(res.data.results));
+    FetchDiet(query).then(res => setQueryList(res.data.results));
   }, [query]);
 
   const handleOpenFullRecipe = recipeId => {
@@ -31,4 +31,4 @@ function SearchPage() {
   );
 }
 
-export default SearchPage;
+export default DietPage;

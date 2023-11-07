@@ -8,7 +8,6 @@ function SearchInput() {
 
   function navigateToSearchPage(e) {
     e.preventDefault();
-    console.log('searchQuery', searchQuery);
     navigate(`/search/${searchQuery}`);
   }
 
@@ -17,7 +16,7 @@ function SearchInput() {
   }
 
   return (
-    <form className={css.inputForm}>
+    <form className={css.inputForm} onSubmit={navigateToSearchPage}>
       <input
         type="text"
         value={searchQuery}
@@ -25,9 +24,9 @@ function SearchInput() {
         onChange={getQuery}
       />
       <button
-        type="button"
+        type="submit"
         className={css.searchBtn}
-        onClick={navigateToSearchPage}
+        // onClick={navigateToSearchPage}
       >
         Search
       </button>
