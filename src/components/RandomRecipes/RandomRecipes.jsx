@@ -21,19 +21,21 @@ function RandomRecipes() {
   };
 
   return (
-    <ul className={css.dishesList}>
-      {food &&
-        food.map(oneDish => {
-          return (
-            <FoodCard
-              key={oneDish.id}
-              cardInfo={oneDish}
-              className={cardCSS.oneDishCard}
-              handleOpenFullRecipe={handleOpenFullRecipe}
-            ></FoodCard>
-          );
-        })}
-    </ul>
+    <section>
+      <ul className={css.dishesList}>
+        {food &&
+          food.map(oneDish => {
+            return (
+              <FoodCard
+                key={oneDish.id}
+                cardInfo={oneDish}
+                className={cardCSS.oneDishCard}
+                handleOpenFullRecipe={handleOpenFullRecipe}
+              ></FoodCard>
+            );
+          })}
+      </ul>
+    </section>
   );
 }
 

@@ -3,10 +3,11 @@ import { NavLink, Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
 import SearchInput from 'components/SearchInput/SearchInput';
 import DropDownMenu from 'components/Menu/DropDownMenu';
+import Footer from 'components/Footer/Footer';
 
 function SharedLayout() {
   return (
-    <div className={css.mainContainer}>
+    <div>
       <header>
         <nav className={css.navContainer}>
           <div className={css.linkContainer}>
@@ -21,7 +22,11 @@ function SharedLayout() {
           </div>
         </nav>
       </header>
-      <Outlet />
+      <main className={css.mainContainer}>
+        <Outlet />
+      </main>
+
+      <Footer></Footer>
     </div>
   );
 }

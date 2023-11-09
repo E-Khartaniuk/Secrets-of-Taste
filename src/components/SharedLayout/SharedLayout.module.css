@@ -1,7 +1,8 @@
-/* .mainContainer {
-  width: 1440px;
-  margin: 0 auto;
-} */
+.mainContainer {
+  display: flex;
+
+  height: 100vh;
+}
 .linkContainer {
   margin-left: 180px;
 }

@@ -6,53 +6,42 @@ function DropDownMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
+  const diets = [
+    'Vegetarian',
+    'Gluten Free',
+    'Lacto-Vegetarian',
+    'Vegan',
+    'Pescetarian',
+    'Paleo',
+    'Primal',
+    'Low FODMAP',
+    'Whole30',
+  ];
+
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
 
   const navigateToCategory = e => {
-    navigate(`/search/${e.target.textContent}`);
+    navigate(`/diet/${e.target.textContent}`);
   };
 
   return (
     <div
       onMouseEnter={handleOpen}
       onMouseLeave={handleOpen}
-      // onClick={handleOpen}
-
       className={css.dopDownContainer}
     >
       Diet
-      {/* <button className={css.menuControlBtn}> Category</button> */}
       {isOpen && (
         <ul className={css.dropDownList}>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Vegetarian
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Gluten Free
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Lacto-Vegetarian
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Vegan
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Pescetarian
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Paleo
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Primal
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Low FODMAP
-          </li>
-          <li className={css.listItem} onClick={navigateToCategory}>
-            Whole30
-          </li>
+          {diets.map(diet => {
+            return (
+              <li className={css.listItem} onClick={navigateToCategory}>
+                {diet}
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>
