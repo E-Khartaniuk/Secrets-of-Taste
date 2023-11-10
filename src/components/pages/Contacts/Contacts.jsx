@@ -2,22 +2,69 @@ import React from 'react';
 
 import css from './Contacts.module.css';
 
+import instaLogo from '../../../img/instagram-logo.png';
+import telegramLogo from '../../../img/telegram-logo.png';
+import facebookLogo from '../../../img/facebook-logo.png';
+
 function Contacts() {
   return (
     <>
       <div className={css.container}>
         <div className={css.titleContainer}>
-          <h1>Contacts</h1>
-          <span>Phone:</span>
-          <a href="tel:+380634406416" className={css.contactItem}>
-            +38(063)440-64-16
-          </a>
-          <span>Mail:</span>
-          <a href="mailto:hartanyuk.e@gmail.com" className={css.contactItem}>
-            hartanyuk.e@gmail.com
-          </a>
+          <h1 className={css.ContactsTitle}>Contacts</h1>
+          <div className={css.contactThumb}>
+            <span className={css.contactPreText}>Phone:</span>
+            <a href="tel:+380630000000" className={css.contactItem}>
+              +38(063)000-00-00
+            </a>
+          </div>
+          <div className={css.contactThumb}>
+            <span className={css.contactPreText}>Mail:</span>
+            <a href="mailto:hartanyuk.e@gmail.com" className={css.contactItem}>
+              hartanyuk.e@gmail.com
+            </a>
+          </div>
+          <h3>Our social networks</h3>{' '}
+          <div className={css.iconsContainer}>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img
+                src={instaLogo}
+                alt="instagram-Icon"
+                className={css.socialImg}
+              />
+            </a>
 
-          <h3>Our social networks</h3>
+            <a
+              href="https://web.telegram.org/k/"
+              target="_blank"
+              rel="noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img
+                src={telegramLogo}
+                alt="instagram-Icon"
+                className={css.socialImg}
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img
+                src={facebookLogo}
+                alt="instagram-Icon"
+                className={css.socialImg}
+              />
+            </a>
+          </div>
         </div>
 
         <div className={css.mapContainer}>

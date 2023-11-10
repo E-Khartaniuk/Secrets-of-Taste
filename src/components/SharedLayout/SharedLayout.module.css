@@ -2,6 +2,10 @@
   display: flex;
   padding: 0 24px;
   height: 100vh;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
 .linkContainer {
   margin-left: 180px;
