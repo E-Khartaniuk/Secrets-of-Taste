@@ -5,6 +5,7 @@ import FullRecipe from './pages/FullRecipe/FullRecipe';
 import Contacts from './pages/Contacts/Contacts';
 import SearchPage from './pages/SearchPage/SearchPage';
 import DietPage from './pages/DIetPage/DietPage';
+import FavoriteDishes from './pages/FavoriteDishes/FavoriteDishes';
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
         <Route path="/recipe/:id" element={<FullRecipe />} />
         <Route path="search/:query" element={<SearchPage />} />
         <Route path="diet/:query" element={<DietPage />} />
+        <Route path="favorites" element={<FavoriteDishes />} />
 
         <Route path="*" element={<Home />} />
       </Route>

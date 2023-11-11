@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import cardCSS from './FoodCard.module.css';
 
 function FoodCard({ cardInfo, handleOpenFullRecipe }) {
+  // const [favorite, setFavorite] = useState({});
   const { id, image, title } = cardInfo;
 
+  const storedFavorites = JSON.parse(localStorage.getItem('favoriteIds')) || [];
+
+  const [favoriteIds, setFavoriteIds] = useState(storedFavorites);
+
+  useEffect(() => {
+    localStorage.setItem('favoriteIds', JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
+
   const addToFavorite = () => {
-    console.log('id', id);
+    // Проверка, присутствует ли id уже в массиве
+    if (favoriteIds.includes(id)) {
+      // Если да, удалить его
+      setFavoriteIds(prevIds => prevIds.filter(favId => favId !== id));
+    } else {
+      // Если нет, добавить его
+      setFavoriteIds(prevIds => [...prevIds, id]);
+    }
   };
 
   return (
