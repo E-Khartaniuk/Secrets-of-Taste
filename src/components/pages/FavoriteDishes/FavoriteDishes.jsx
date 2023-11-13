@@ -6,13 +6,22 @@ import { useNavigate } from 'react-router-dom';
 function FavoriteDishes() {
   const navigate = useNavigate();
   const [food, setFood] = useState([]);
+  const [favoriteId, setFavoriteId] = useState([]);
 
-  useEffect(() => {
-    FetchById('665620,716406').then(res => {
-      console.log('reesssssssssssssssssssssssss', ree);
-      setFood(res.data.recipes);
-    });
-  }, []);
+  // useEffect(() => {
+  //   const favoriteIdFromLS = localStorage.getItem('favoriteIds');
+  //   setFavoriteId(prevIds => [...prevIds, favoriteId]);
+  //   console.log('favoriteFromLS', favoriteIdFromLS);
+  // }, [favoriteId]);
+
+  // useEffect(() => {
+  //   for (const id of favoriteId) {
+  //     FetchById(id).then(res => {
+  //       console.log('reesssssssssssssssssssssssss', ree);
+  //       setFood(prevFood => [...prevFood, res.data.recipes]);
+  //     });
+  //   }
+  // }, [favoriteId]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);

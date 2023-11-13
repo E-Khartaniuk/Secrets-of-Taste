@@ -14,12 +14,9 @@ function FoodCard({ cardInfo, handleOpenFullRecipe }) {
   }, [favoriteIds]);
 
   const addToFavorite = () => {
-    // Проверка, присутствует ли id уже в массиве
     if (favoriteIds.includes(id)) {
-      // Если да, удалить его
       setFavoriteIds(prevIds => prevIds.filter(favId => favId !== id));
     } else {
-      // Если нет, добавить его
       setFavoriteIds(prevIds => [...prevIds, id]);
     }
   };

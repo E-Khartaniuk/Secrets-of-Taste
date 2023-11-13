@@ -37,7 +37,11 @@ function DropDownMenu() {
         <ul className={css.dropDownList}>
           {diets.map(diet => {
             return (
-              <li className={css.listItem} onClick={navigateToCategory}>
+              <li
+                className={css.listItem}
+                onClick={navigateToCategory}
+                key={diet}
+              >
                 {diet}
               </li>
             );
