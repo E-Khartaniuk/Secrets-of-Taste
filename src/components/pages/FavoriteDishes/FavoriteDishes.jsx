@@ -1,51 +1,44 @@
-// import FoodCard from 'components/FoodCard/FoodCard';
-// import FetchById from 'components/Utils/FetchById';
-// import React, { useEffect, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import FoodCard from 'components/FoodCard/FoodCard';
+import FetchById from 'components/Utils/FetchById';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-// function FavoriteDishes() {
-//   const navigate = useNavigate();
-//   // const [food, setFood] = useState([]);
-//   // const [favoriteDishes, setFavoriteDishes] = useState([]);
+function FavoriteDishes() {
+  const navigate = useNavigate();
 
-//   // useEffect(() => {
-//   //   const favoriteIdFromLS = localStorage.getItem('favoriteIds');
-//   //   setFavoriteId(prevIds => [...prevIds, favoriteId]);
-//   //   console.log('favoriteFromLS', favoriteIdFromLS);
-//   // }, [favoriteId]);
+  const favDishes = useSelector(state => state.dishes.value);
+  const [food, setFood] = useState(favDishes);
 
-//   // useEffect(() => {
-//   //   for (const id of favoriteId) {
-//   //     FetchById(id).then(res => {
-//   //       console.log('reesssssssssssssssssssssssss', ree);
-//   //       setFood(prevFood => [...prevFood, res.data.recipes]);
-//   //     });
-//   //   }
-//   // }, [favoriteId]);
+  console.log('food', food);
 
-//   const handleOpenFullRecipe = recipeId => {
-//     navigate(`/recipe/${recipeId}`);
-//   };
+  useEffect(() => {
+    setFood(JSON.parse(localStorage.getItem('favoriteIds')) || []);
+  }, []);
 
-//   return (
-//     <section>
-//       <ul
-//       // className={css.dishesList}
-//       >
-//         {food &&
-//           food.map(oneDish => {
-//             return (
-//               <FoodCard
-//                 key={oneDish.id}
-//                 cardInfo={oneDish}
-//                 // className={cardCSS.oneDishCard}
-//                 handleOpenFullRecipe={handleOpenFullRecipe}
-//               ></FoodCard>
-//             );
-//           })}
-//       </ul>
-//     </section>
-//   );
-// }
+  const handleOpenFullRecipe = recipeId => {
+    navigate(`/recipe/${recipeId}`);
+  };
 
-// export default FavoriteDishes;
+  return (
+    <section>
+      <ul
+      // className={css.dishesList}
+      >
+        {food &&
+          food.map(oneDish => {
+            return (
+              <FoodCard
+                key={oneDish.id}
+                cardInfo={oneDish.payload}
+                // className={cardCSS.oneDishCard}
+                handleOpenFullRecipe={handleOpenFullRecipe}
+              ></FoodCard>
+            );
+          })}
+      </ul>
+    </section>
+  );
+}
+
+export default FavoriteDishes;

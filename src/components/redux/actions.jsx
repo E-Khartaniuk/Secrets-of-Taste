@@ -1,13 +1,12 @@
 const state = useSelector(state => state.favorite);
 
-export const getFavorite = async () => {
-  const data = JSON.parse(localStorage.getItem('favoriteIds')) || [];
-  return data;
-};
+// export const getFavorite = async () => {
+//   const data = JSON.parse(localStorage.getItem('favoriteIds')) || [];
+//   return data;
+// };
 
-export const togleFavorite = async contactData => {
-  if (favoriteIds.includes(id)) {
-    setFavoriteIds(prevIds => prevIds.filter(favId => favId !== id));
+export const togleFavorite = async cardinfo => {
+  if (state.favorite) {
   } else {
     setFavoriteIds(prevIds => [...prevIds, id]);
   }

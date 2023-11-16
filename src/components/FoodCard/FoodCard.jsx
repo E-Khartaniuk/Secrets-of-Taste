@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import cardCSS from './FoodCard.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from 'components/redux/dishesSlice';
 
 function FoodCard({ cardInfo, handleOpenFullRecipe }) {
+  const count = useSelector(state => state.dishes.value);
+  const dispatch = useDispatch();
+  console.log('count', count);
   // const [favorite, setFavorite] = useState({});
   const { id, image, title } = cardInfo;
 
@@ -31,6 +36,20 @@ function FoodCard({ cardInfo, handleOpenFullRecipe }) {
       <button onClick={addToFavorite} className={cardCSS.favBtn}>
         Like
       </button>
+      <button
+        onClick={() => {
+          dispatch(increment(cardInfo));
+        }}
+      >
+        Like
+      </button>
+      {/* <button
+        onClick={() => {
+          dispatch(decrement());
+        }}
+      >
+        Like
+      </button> */}
       <div
         onClick={() => handleOpenFullRecipe(id)}
         className={cardCSS.oneDishCard}
