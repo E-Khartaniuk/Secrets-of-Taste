@@ -4,16 +4,18 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import css from '../../dishesList/DishesList.module.css';
+
 function FavoriteDishes() {
   const navigate = useNavigate();
 
-  const favDishes = useSelector(state => state.dishes.value);
+  const favDishes = useSelector(state => state.dishes.favoriteItems);
+  // const favDishes = JSON.parse(localStorage.getItem('favoriteItems')) || [];
+
   const [food, setFood] = useState(favDishes);
 
-  console.log('food', food);
-
   useEffect(() => {
-    setFood(JSON.parse(localStorage.getItem('favoriteIds')) || []);
+    JSON.parse(localStorage.getItem('favoriteItems'));
   }, []);
 
   const handleOpenFullRecipe = recipeId => {
@@ -22,16 +24,13 @@ function FavoriteDishes() {
 
   return (
     <section>
-      <ul
-      // className={css.dishesList}
-      >
+      <ul className={css.dishesList}>
         {food &&
           food.map(oneDish => {
             return (
               <FoodCard
                 key={oneDish.id}
-                cardInfo={oneDish.payload}
-                // className={cardCSS.oneDishCard}
+                cardInfo={oneDish}
                 handleOpenFullRecipe={handleOpenFullRecipe}
               ></FoodCard>
             );

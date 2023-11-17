@@ -1,28 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: [],
+  favoriteItems: [],
 };
 
 export const dishesSlice = createSlice({
   name: 'dishes',
   initialState,
   reducers: {
-    increment: (state, payload) => {
-      state.value = [...state.value, payload];
+    toggleFavorite: (state, action) => {
+      const existingIndex = state.favoriteItems.findIndex(
+        item => item.id === action.payload.id
+      );
 
-      localStorage.setItem('favoriteIds', JSON.stringify(state.value));
-    },
-    decrement: state => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+      if (existingIndex !== -1) {
+        state.favoriteItems.splice(existingIndex, 1);
+      } else {
+        state.favoriteItems.push(action.payload);
+      }
+
+      localStorage.setItem(
+        'favoriteItems',
+        JSON.stringify(state.favoriteItems)
+      );
     },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = dishesSlice.actions;
+export const { toggleFavorite } = dishesSlice.actions;
 
 export default dishesSlice.reducer;
