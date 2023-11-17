@@ -1,6 +1,5 @@
 import FoodCard from 'components/FoodCard/FoodCard';
-import FetchById from 'components/Utils/FetchById';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,13 +9,6 @@ function FavoriteDishes() {
   const navigate = useNavigate();
 
   const favDishes = useSelector(state => state.dishes.favoriteItems);
-  // const favDishes = JSON.parse(localStorage.getItem('favoriteItems')) || [];
-
-  const [food, setFood] = useState(favDishes);
-
-  useEffect(() => {
-    JSON.parse(localStorage.getItem('favoriteItems'));
-  }, []);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
@@ -25,8 +17,8 @@ function FavoriteDishes() {
   return (
     <section>
       <ul className={css.dishesList}>
-        {food &&
-          food.map(oneDish => {
+        {favDishes &&
+          favDishes.map(oneDish => {
             return (
               <FoodCard
                 key={oneDish.id}
