@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Secrets-of-Taste/static/css/main.3accf173.css",
-    "main.js": "/Secrets-of-Taste/static/js/main.c9526215.js",
+    "main.css": "/Secrets-of-Taste/static/css/main.16a56bab.css",
+    "main.js": "/Secrets-of-Taste/static/js/main.91ca49c0.js",
     "index.html": "/Secrets-of-Taste/index.html",
-    "main.3accf173.css.map": "/Secrets-of-Taste/static/css/main.3accf173.css.map",
-    "main.c9526215.js.map": "/Secrets-of-Taste/static/js/main.c9526215.js.map"
+    "main.16a56bab.css.map": "/Secrets-of-Taste/static/css/main.16a56bab.css.map",
+    "main.91ca49c0.js.map": "/Secrets-of-Taste/static/js/main.91ca49c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.3accf173.css",
-    "static/js/main.c9526215.js"
+    "static/css/main.16a56bab.css",
+    "static/js/main.91ca49c0.js"
   ]
 }
