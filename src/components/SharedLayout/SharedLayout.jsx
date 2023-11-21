@@ -18,7 +18,7 @@ function SharedLayout() {
               Contacts
             </NavLink>
             <NavLink to="/favorites" className={css.navLink}>
-              Favorites dishes
+              Favorite dishes
             </NavLink>
             <DropDownMenu />
             <SearchInput />

@@ -3,11 +3,21 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './FullRecipe.module.css';
 import RecipeInstructions from 'components/RecipeInstructions/RecipeInstructions';
+import SimilarRecipes from 'components/SimilarRecipes/SimilarRecipes';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavorite } from 'components/redux/dishesSlice';
 
 function FullRecipe() {
   const [fullRecipe, setFullRecipe] = useState([]);
-
   const { id } = useParams();
+  const dispatch = useDispatch();
+
+  const favoriteItems = useSelector(state => state.dishes.favoriteItems);
+  const isFavorite = favoriteItems.some(item => item.id === id);
+
+  const handleToggleFavorite = () => {
+    dispatch(toggleFavorite(fullRecipe));
+  };
 
   useEffect(() => {
     FetchFullRecipe(id).then(res => {
@@ -24,6 +34,9 @@ function FullRecipe() {
           alt={fullRecipe.title}
           className={css.recipeImg}
         />
+        <button className={css.favBtn} onClick={handleToggleFavorite}>
+          {isFavorite ? '❤️' : '💚'}
+        </button>
 
         <div className={css.recipePropertyComtainer}>
           <p className={css.recipeProperty}>
@@ -61,13 +74,19 @@ function FullRecipe() {
         {fullRecipe.extendedIngredients &&
           fullRecipe.extendedIngredients.map(ingridient => (
             <li id={ingridient.id} className={css.ingridientListItem}>
-              <p>{ingridient.original}</p>
+              <span>{ingridient.original}</span>
+              <img
+                src={`https://spoonacular.com/cdn/ingredients_100x100/${ingridient.image}`}
+                alt={ingridient.aisle}
+                className={css.ingridientImg}
+              />
             </li>
           ))}
       </ul>
       {fullRecipe.instructions && <h3>How to cook it:</h3>}
       <RecipeInstructions instructionsHTML={fullRecipe.instructions} />
       <RecipeInstructions instructionsHTML={fullRecipe.summary} />
+      <SimilarRecipes similarID={id} />
     </div>
   );
 }

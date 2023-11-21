@@ -1,3 +1,10 @@
+.dishElement {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
 .oneDishCard {
   width: 200px;
   height: 300px;
@@ -20,6 +27,7 @@
   width: 90%;
   height: 60px;
   padding: 10px;
+  /* margin-left: 20px; */
 }
 
 .cardImg {
@@ -35,40 +43,4 @@
 
 .oneDishCard:hover img {
   width: 94%;
-}
-
-/* .cardBtn {
-  border: none;
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  height: 38px;
-  background-color: #fe724c;
-
-  border-radius: 8px;
-
-  cursor: pointer;
-} */
-
-/* .cardBtn:hover {
-  background-color: #e65730;
-} */
-
-.dishElement {
-  position: relative;
-}
-
-.favBtn {
-  font-size: 18px;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  color: #fe724c;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.favBtn:hover {
-  scale: 1.1;
 }

@@ -1,45 +1,47 @@
-// import React, { useEffect, useState } from 'react';
-// import css from '../dishesList/DishesList.module.css';
-// import cardCSS from '../oneDish/OneDish.module.css';
-// import { useNavigate } from 'react-router-dom';
-// import fetchSimilar from 'components/Utils/fetchSimilar';
+import React, { useEffect, useState } from 'react';
+import css from '../SimilarRecipes/SimilarRecipes.module.css';
 
-// function SimilarRecipes({ similarID }) {
-//   const navigate = useNavigate();
-//   const [food, setFood] = useState([]);
+import { useNavigate } from 'react-router-dom';
+import fetchSimilar from 'components/Utils/fetchSimilar';
 
-//   useEffect(() => {
-//     fetchSimilar(similarID).then(res => {
-//       setFood(res.data);
-//       console.log('similar FOOOOOOOOOD', food);
-//       console.log('res', res.data);
-//     });
-//   }, []);
+function SimilarRecipes({ similarID }) {
+  const navigate = useNavigate();
+  const [food, setFood] = useState([]);
 
-//   const handleOpenFullRecipe = recipeId => {
-//     navigate(`/recipe/${recipeId}`);
-//   };
+  useEffect(() => {
+    fetchSimilar(similarID).then(res => {
+      setFood(res.data);
+    });
+  }, [similarID]);
 
-//   return (
-//     <ul className={css.dishesList}>
-//       {food &&
-//         food.map(({ id, image, title }) => {
-//           return (
-//             <li key={id} className={cardCSS.oneDishCard}>
-//               <img src={image} alt={title} className={cardCSS.cardImg} />
-//               <h3 className={cardCSS.cardTitle}> {title}</h3>
-//               <button
-//                 type="button"
-//                 onClick={() => handleOpenFullRecipe(id)}
-//                 className={cardCSS.cardBtn}
-//               >
-//                 Open full recipe
-//               </button>
-//             </li>
-//           );
-//         })}
-//     </ul>
-//   );
-// }
+  const handleOpenFullRecipe = recipeId => {
+    navigate(`/recipe/${recipeId}`);
+  };
 
-// export default SimilarRecipes;
+  return (
+    <>
+      <h3>Similar recipes:</h3>
+      <ul className={css.dishElement}>
+        {food &&
+          food.map(({ id, title, imageType }) => {
+            return (
+              <li
+                key={id}
+                className={css.oneDishCard}
+                onClick={() => handleOpenFullRecipe(id)}
+              >
+                <img
+                  src={`https://spoonacular.com/recipeImages/${id}-312x150.${imageType}`}
+                  alt={title}
+                  className={css.cardImg}
+                />
+                <h3 className={css.cardTitle}> {title}</h3>
+              </li>
+            );
+          })}
+      </ul>
+    </>
+  );
+}
+
+export default SimilarRecipes;

@@ -1,5 +1,5 @@
 import React from 'react';
-import cardCSS from './FoodCard.module.css';
+import css from './FoodCard.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from 'components/redux/dishesSlice';
 
@@ -16,16 +16,14 @@ function FoodCard({ cardInfo, handleOpenFullRecipe }) {
   };
 
   return (
-    <li className={cardCSS.dishElement}>
-      <button className={cardCSS.favBtn} onClick={handleToggleFavorite}>
-        {isFavorite ? 'Unlike' : 'Like'}
+    <li className={css.dishElement}>
+      <button className={css.favBtn} onClick={handleToggleFavorite}>
+        {isFavorite ? '❤️' : '💚'}
       </button>
-      <div
-        onClick={() => handleOpenFullRecipe(id)}
-        className={cardCSS.oneDishCard}
-      >
-        <img src={image} alt={title} className={cardCSS.cardImg} />
-        <h3 className={cardCSS.cardTitle}>{title}</h3>
+
+      <div onClick={() => handleOpenFullRecipe(id)} className={css.oneDishCard}>
+        <img src={image} alt={title} className={css.cardImg} />
+        <h3 className={css.cardTitle}>{title}</h3>
       </div>
     </li>
   );

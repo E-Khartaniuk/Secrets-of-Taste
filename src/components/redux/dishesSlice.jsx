@@ -6,7 +6,11 @@ const initialState = {
 
 export const dishesSlice = createSlice({
   name: 'dishes',
-  initialState,
+  initialState: {
+    favoriteItems: JSON.parse(localStorage.getItem('favoriteItems')) || [
+      initialState,
+    ],
+  },
   reducers: {
     toggleFavorite: (state, action) => {
       const existingIndex = state.favoriteItems.findIndex(
