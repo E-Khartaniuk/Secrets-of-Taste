@@ -67,10 +67,6 @@
   padding-left: 12px;
 }
 
-/* .ingridientListItem:nth-last-child(2n) {
-  background-color: rgb(255, 153, 58);
-} */
-
 .ingridientListItem:hover {
   border: dashed 1px rgb(63, 63, 63);
 }
