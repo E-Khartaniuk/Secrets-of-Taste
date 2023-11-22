@@ -59,8 +59,7 @@
 .ingridientListItem {
   display: flex;
   align-items: center;
-  /* width: 550px; */
-  /* background-color: rgb(255, 153, 58); */
+
   color: black;
   border-radius: 50px;
   border: solid 0.5px rgb(228, 228, 228);
