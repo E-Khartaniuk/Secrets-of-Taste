@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fetchRandomRecipes from 'components/Utils/fetchRandomRecipes';
-import css from '../dishesList/DishesList.module.css';
+import css from './RandomRecipes.module.css';
 import cardCSS from '../oneDish/OneDish.module.css';
 
 import { useNavigate } from 'react-router-dom';
@@ -10,14 +10,20 @@ function RandomRecipes() {
   const navigate = useNavigate();
   const [food, setFood] = useState([]);
 
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
-    fetchRandomRecipes().then(res => {
-      setFood(res.data.recipes);
+    fetchRandomRecipes(page).then(res => {
+      setFood(prev => [...prev, ...res.data.recipes]);
     });
-  }, []);
+  }, [page]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
+  };
+
+  const handleLoadMore = () => {
+    setPage(page + 1);
   };
 
   return (
@@ -35,6 +41,13 @@ function RandomRecipes() {
             );
           })}
       </ul>
+      <button
+        type="button"
+        onClick={handleLoadMore}
+        className={css.loadMoreBtn}
+      >
+        Load more
+      </button>
     </section>
   );
 }

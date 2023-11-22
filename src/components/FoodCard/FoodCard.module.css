@@ -37,23 +37,6 @@
   width: 94%;
 }
 
-/* .cardBtn {
-  border: none;
-  display: block;
-  margin: 0 auto;
-  width: 90%;
-  height: 38px;
-  background-color: #fe724c;
-
-  border-radius: 8px;
-
-  cursor: pointer;
-} */
-
-/* .cardBtn:hover {
-  background-color: #e65730;
-} */
-
 .dishElement {
   position: relative;
 }

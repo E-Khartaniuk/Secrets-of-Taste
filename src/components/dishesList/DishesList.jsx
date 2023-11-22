@@ -24,7 +24,7 @@ function DishesList() {
             key={oneDish.id}
             cardInfo={oneDish}
             handleOpenFullRecipe={handleOpenFullRecipe}
-          ></FoodCard>
+          />
         );
       })}
     </ul>

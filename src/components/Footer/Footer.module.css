@@ -1,5 +1,63 @@
-.footerContainer {
-  width: 100vw;
+.footer {
+  margin-top: 48px;
   height: 100px;
-  background-color: #fe724c;
+  background-color: #ffffff;
+  border-top: solid 2px rgb(245, 245, 245);
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerSotialiconSection {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  margin-left: 66px;
+  margin-top: 16px;
+}
+.socialIconContainer {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  outline: solid 2px #fe724c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialIconContainer:hover {
+  outline: dashed 2px #fe724c;
+}
+
+.socialImg {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+}
+
+.contactItem {
+  color: #fe724c;
+  text-decoration: none;
+}
+.contactPreText {
+  color: #fe724c;
+  font-weight: 600;
+  margin-right: 12px;
+}
+
+.contactThumb {
+  margin-top: 16px;
+  margin-right: 66px;
+}
+
+.copirite {
+  display: block;
+  text-decoration: none;
+  color: #797979;
+  width: 150px;
+  margin: 0 auto;
 }

@@ -1,0 +1,24 @@
+.loadMoreBtn {
+  display: block;
+  border: none;
+  background-color: #fe724c;
+  color: white;
+  font-size: 20px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 36px auto;
+}
+
+.loadMoreBtn:hover {
+  background-color: #e65730;
+}
+
+.dishesList {
+  margin: 24px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-start;
+}
