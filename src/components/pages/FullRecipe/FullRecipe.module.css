@@ -4,9 +4,33 @@
   margin: 0 auto;
 }
 
+.imgContainer {
+  position: relative;
+}
+
+.favBtn {
+  font-size: 18px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .title {
   font-size: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ingredientsSection {
+  border-top: solid 1px rgba(189, 189, 189, 0.5);
+}
+
+.ingredientsSectionTitle {
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 
 .ingredientImg {
@@ -24,7 +48,7 @@
 .recipeProperty {
   padding: 10px;
   color: white;
-  background-color: rgb(255, 153, 58);
+  background-color: #fe724c;
   border-radius: 50px;
   padding-left: 12px;
 }
@@ -45,7 +69,7 @@
 }
 
 .fullRecipeHeadContainer {
-  background-color: rgba(192, 226, 255, 0.096);
+  /* background-color: rgba(192, 226, 255, 0.096); */
 }
 
 .listContainer {
@@ -68,4 +92,10 @@
 
 .ingridientListItem:hover {
   border: dashed 1px rgb(63, 63, 63);
+}
+
+.instructions {
+  margin-top: 22px;
+
+  border-top: solid 1px rgba(189, 189, 189, 0.5);
 }
