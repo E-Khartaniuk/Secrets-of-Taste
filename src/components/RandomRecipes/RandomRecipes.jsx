@@ -13,10 +13,10 @@ function RandomRecipes() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetchRandomRecipes(page).then(res => {
-      setFood(prev => [...prev, ...res.data.recipes]);
+    fetchRandomRecipes().then(res => {
+      setFood(res.data.recipes);
     });
-  }, [page]);
+  }, []);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
@@ -24,6 +24,9 @@ function RandomRecipes() {
 
   const handleLoadMore = () => {
     setPage(page + 1);
+    fetchRandomRecipes(page).then(res => {
+      setFood(prev => [...prev, ...res.data.recipes]);
+    });
   };
 
   return (
