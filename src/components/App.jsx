@@ -17,7 +17,6 @@ export const App = () => {
         <Route path="search/:query" element={<SearchPage />} />
         <Route path="diet/:query" element={<DietPage />} />
         <Route path="favorites" element={<FavoriteDishes />} />
-
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

@@ -5,9 +5,11 @@ import SearchInput from 'components/SearchInput/SearchInput';
 import DropDownMenu from 'components/Menu/DropDownMenu';
 import Footer from 'components/Footer/Footer';
 
+import { GoogleLogin } from '@react-oauth/google';
+
 function SharedLayout() {
   return (
-    <div>
+    <>
       <header>
         <nav className={css.navContainer}>
           <div className={css.linkContainer}>
@@ -24,13 +26,21 @@ function SharedLayout() {
             <SearchInput />
           </div>
         </nav>
+        <GoogleLogin
+          onSuccess={credentialResponse => {
+            console.log(credentialResponse);
+          }}
+          onError={() => {
+            console.log('Login Failed');
+          }}
+        />
       </header>
       <main className={css.mainContainer}>
         <Outlet />
       </main>
 
-      <Footer></Footer>
-    </div>
+      <Footer />
+    </>
   );
 }
 

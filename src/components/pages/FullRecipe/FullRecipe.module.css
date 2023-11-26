@@ -80,6 +80,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
+
 .ingridientListItem {
   display: flex;
   align-items: center;
@@ -96,6 +97,5 @@
 
 .instructions {
   margin-top: 22px;
-
   border-top: solid 1px rgba(189, 189, 189, 0.5);
 }
