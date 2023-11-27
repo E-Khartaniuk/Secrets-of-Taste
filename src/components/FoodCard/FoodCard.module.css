@@ -13,7 +13,7 @@
 
 .oneDishCard:hover {
   color: white;
-  background-color: #fe724c;
+  background-color: rgb(9, 65, 75);
 }
 
 .cardTitle {
@@ -46,7 +46,7 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  color: #fe724c;
+
   background-color: transparent;
   border: none;
   cursor: pointer;

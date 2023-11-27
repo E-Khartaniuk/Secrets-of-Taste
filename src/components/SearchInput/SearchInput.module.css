@@ -6,20 +6,20 @@
   padding: 5px;
   border-radius: 4px;
   color: white;
-  background-color: #fe724c;
+  background-color: rgb(9, 65, 75);
   outline: none;
-  border: solid 1px #fcb19c;
+  border: solid 1px rgb(88, 120, 126);
   transition: border 0.1s ease-in;
 }
 
 .inputSearch:focus {
   border: solid 1px #ffffff;
-  background-color: #fa6b43;
+  background-color: rgb(9, 65, 75);
 }
 
 .inputSearch:hover {
   border: solid 1px #ffffff;
-  background-color: #fa6b43;
+  background-color: rgb(14, 83, 95);
 }
 
 .searchBtn {
@@ -27,13 +27,13 @@
   padding: 5px;
   color: white;
   border-radius: 4px;
-  background-color: #fe724c;
-  border: solid 1px #fcb19c;
+  background-color: rgb(9, 65, 75);
+  border: solid 1px rgb(88, 120, 126);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .searchBtn:hover {
-  color: #fe724c;
-  background-color: white;
+  color: white;
+  background-color: rgb(14, 83, 95);
 }

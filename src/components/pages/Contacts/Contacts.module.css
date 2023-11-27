@@ -14,7 +14,7 @@
   margin-top: 46px;
   margin-right: 400px;
   padding: 24px;
-  background-color: #fe724c;
+  background-color: rgb(9, 65, 75);
 }
 
 .titleContainer {
@@ -39,14 +39,14 @@
   width: 50px;
   height: 50px;
   border-radius: 8px;
-  outline: solid 1px #fe724c;
+  outline: solid 1px rgb(9, 65, 75);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .socialIconContainer:hover {
-  outline: dashed 2px #fe724c;
+  outline: dashed 2px rgb(88, 120, 126);
   /* scale: 1.1; */
 }
 
