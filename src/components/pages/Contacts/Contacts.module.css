@@ -14,7 +14,7 @@
   margin-top: 46px;
   margin-right: 400px;
   padding: 24px;
-  background-color: rgb(9, 65, 75);
+  background-color: var(--main-color);
 }
 
 .titleContainer {
@@ -39,14 +39,14 @@
   width: 50px;
   height: 50px;
   border-radius: 8px;
-  outline: solid 1px rgb(9, 65, 75);
+  outline: solid 1px var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .socialIconContainer:hover {
-  outline: dashed 2px rgb(88, 120, 126);
+  outline: dashed 2px var(--secondary-colo);
   /* scale: 1.1; */
 }
 

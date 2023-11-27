@@ -10,8 +10,10 @@
 }
 
 .categoryButton:focus {
-  background-color: #fe724c;
+  color: white;
+  background-color: var(--main-color);
 }
 .categoryButton:hover {
-  background-color: #fe724c;
+  color: white;
+  background-color: var(--main-color);
 }

@@ -256,3 +256,10 @@ summary {
 ul {
   list-style: none;
 }
+
+:root {
+  --main-color: rgb(9, 65, 75);
+  --secondary-color: rgb(88, 120, 126);
+  --hover-color: rgb(14, 83, 95);
+  --border-color: rgb(88, 120, 126);
+}

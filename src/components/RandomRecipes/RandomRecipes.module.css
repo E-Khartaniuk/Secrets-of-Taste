@@ -1,7 +1,7 @@
 .loadMoreBtn {
   display: block;
   border: none;
-  background-color: #fe724c;
+  background-color: var(--main-color);
   color: white;
   font-size: 20px;
   padding: 12px 22px;
@@ -11,7 +11,7 @@
 }
 
 .loadMoreBtn:hover {
-  background-color: #e65730;
+  background-color: var(--hover-color);
 }
 
 .dishesList {

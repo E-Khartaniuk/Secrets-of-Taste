@@ -20,7 +20,7 @@
 
 .oneDishCard:hover {
   color: white;
-  background-color: #fe724c;
+  background-color: var(--main-color);
 }
 
 .cardTitle {

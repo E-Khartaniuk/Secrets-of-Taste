@@ -30,7 +30,7 @@
   color: black;
   background-color: white;
   border-radius: 4px;
-  border: 1px solid #fe724c;
+  border: 1px solid var(--main-color);
 }
 
 .listItem {
@@ -41,6 +41,5 @@
 }
 
 .listItem:hover {
-  /* background: #fe724c; */
-  color: #fe724c;
+  color: var(--border-color);
 }
