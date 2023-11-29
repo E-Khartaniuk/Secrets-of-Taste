@@ -3,6 +3,7 @@ import css from '../SimilarRecipes/SimilarRecipes.module.css';
 
 import { useNavigate } from 'react-router-dom';
 import fetchSimilar from 'components/Utils/fetchSimilar';
+import scrollToTop from 'components/Utils/scrollToTop';
 
 function SimilarRecipes({ similarID }) {
   const navigate = useNavigate();
@@ -28,7 +29,10 @@ function SimilarRecipes({ similarID }) {
               <li
                 key={id}
                 className={css.oneDishCard}
-                onClick={() => handleOpenFullRecipe(id)}
+                onClick={() => {
+                  handleOpenFullRecipe(id);
+                  scrollToTop();
+                }}
               >
                 <img
                   src={`https://spoonacular.com/recipeImages/${id}-312x150.${imageType}`}

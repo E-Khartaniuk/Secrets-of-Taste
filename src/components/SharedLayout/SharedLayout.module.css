@@ -17,16 +17,38 @@
 }
 
 .navLink {
+  position: relative;
   text-decoration: none;
   color: white;
   font-size: 24px;
   margin-right: 40px;
 }
 
-.activeNavLink {
-  font-weight: bold;
+/* fff */
+
+.navLink:hover {
+  color: white;
 }
 
-.active {
-  text-transform: uppercase;
+.navLink::before {
+  content: '';
+  position: absolute;
+  bottom: -2%;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #fff; /* Цвет подчеркивания */
+  transition: width 0.25s ease-in-out, left 0.25s ease-in-out;
+}
+
+.navLink:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* ffff */
+
+.activeLink {
+  text-decoration: dashed;
+  border-bottom: solid 1px white;
 }

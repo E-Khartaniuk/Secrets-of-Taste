@@ -46,7 +46,7 @@
 }
 
 .socialIconContainer:hover {
-  outline: dashed 2px var(--secondary-colo);
+  outline: dashed 2px var(--main-color);
   /* scale: 1.1; */
 }
 
