@@ -22,3 +22,11 @@
   font-size: 24px;
   margin-right: 40px;
 }
+
+.activeNavLink {
+  font-weight: bold;
+}
+
+.active {
+  text-transform: uppercase;
+}
