@@ -1,0 +1,29 @@
+.dishesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (max-width: 719px) {
+  .container {
+    width: 480px;
+  }
+}

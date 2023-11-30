@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import css from '../../dishesList/DishesList.module.css';
+import css from './FavoriteDishes.module.css';
 
 function FavoriteDishes() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function FavoriteDishes() {
   };
 
   return (
-    <section>
+    <section className={css.container}>
       <ul className={css.dishesList}>
         {favDishes &&
           favDishes.map(oneDish => {

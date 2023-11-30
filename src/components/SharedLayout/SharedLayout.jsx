@@ -21,7 +21,6 @@ function SharedLayout() {
           <div className={css.linkContainer}>
             <NavLink
               to="/"
-              // className={css.navLink}
               onClick={() => handleSetActivePage('Home')}
               className={
                 activePage === 'Home'
@@ -29,8 +28,9 @@ function SharedLayout() {
                   : `${css.navLink}`
               }
             >
-              Home
+              Secrets of Taste
             </NavLink>
+
             <NavLink
               to="/contacts"
               onClick={() => handleSetActivePage('Contacts')}
@@ -39,13 +39,12 @@ function SharedLayout() {
                   ? `${css.navLink} ${css.activeLink}`
                   : `${css.navLink}`
               }
-              // className={css.navLink}
             >
               Contacts
             </NavLink>
+
             <NavLink
               to="/favorites"
-              // className={css.navLink}
               onClick={() => handleSetActivePage('Favorite')}
               className={
                 activePage === 'Favorite'

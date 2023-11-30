@@ -15,10 +15,31 @@
 }
 
 .dishesList {
-  margin: 24px 0px 0px 0px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 12px;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (max-width: 719px) {
+  .container {
+    width: 480px;
+  }
 }

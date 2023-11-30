@@ -7,27 +7,50 @@ import FetchDiet from 'components/Utils/FetchDiet';
 function DietPage() {
   const navigate = useNavigate();
   const [queryList, setQueryList] = useState([]);
+  const [page, setPage] = useState(1);
+
   const { query } = useParams();
 
   useEffect(() => {
-    FetchDiet(query).then(res => setQueryList(res.data.results));
+    // setQueryList([]);
+    FetchDiet(query).then(res => {
+      setQueryList(res.data.results);
+    });
   }, [query]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
   };
+
+  const handleLoadMore = () => {
+    setPage(page + 1);
+    FetchDiet(query, page).then(res => {
+      setQueryList(prev => [...prev, ...res.data.results]);
+    });
+  };
+
   return (
-    <ul className={css.dishesList}>
-      {queryList.map(oneDish => {
-        return (
-          <FoodCard
-            key={oneDish.id}
-            cardInfo={oneDish}
-            handleOpenFullRecipe={handleOpenFullRecipe}
-          ></FoodCard>
-        );
-      })}
-    </ul>
+    <>
+      <ul className={css.dishesList}>
+        {queryList.map(oneDish => {
+          return (
+            <FoodCard
+              key={oneDish.id}
+              cardInfo={oneDish}
+              handleOpenFullRecipe={handleOpenFullRecipe}
+            ></FoodCard>
+          );
+        })}
+      </ul>
+
+      <button
+        type="button"
+        onClick={handleLoadMore}
+        className={css.loadMoreBtn}
+      >
+        Load more
+      </button>
+    </>
   );
 }
 

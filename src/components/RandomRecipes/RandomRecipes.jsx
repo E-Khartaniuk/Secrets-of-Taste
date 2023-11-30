@@ -30,7 +30,7 @@ function RandomRecipes() {
   };
 
   return (
-    <section>
+    <section className={css.container}>
       <ul className={css.dishesList}>
         {food &&
           food.map(oneDish => {
