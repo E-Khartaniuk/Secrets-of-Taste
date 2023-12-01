@@ -40,7 +40,7 @@ function FullRecipe() {
           />
         </div>
 
-        <div className={css.recipePropertyComtainer}>
+        <div className={css.recipePropertyContainer}>
           <p className={css.recipeProperty}>
             Cooking time: {fullRecipe.readyInMinutes} minutes
           </p>

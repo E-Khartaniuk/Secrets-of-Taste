@@ -8,10 +8,16 @@ import Footer from 'components/Footer/Footer';
 
 function SharedLayout() {
   const [activePage, setActivePage] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSetActivePage = page => {
     setActivePage(``);
     setActivePage(page);
+  };
+
+  const toggleMenu = e => {
+    setIsMenuOpen(!isMenuOpen);
+    // document.body.classList.toggle('scrollLock', isMenuOpen);
   };
 
   return (
@@ -54,8 +60,67 @@ function SharedLayout() {
             >
               Favorite dishes
             </NavLink>
+
             <DropDownMenu />
+
             <SearchInput />
+          </div>
+
+          <button onClick={toggleMenu} className={css.mobileMenuOpenBtn}>
+            open menu
+          </button>
+          <div
+            className={
+              isMenuOpen
+                ? `${css.mobilemenu} ${css.openMenu}`
+                : `${css.closeMenu}`
+            }
+          >
+            <button
+              onClick={toggleMenu}
+              className={
+                isMenuOpen
+                  ? `${css.mobileMenuCloseBtn} ${css.showNavLink}`
+                  : `${css.closeNavLink}`
+              }
+            >
+              close menu
+            </button>
+            <NavLink
+              to="/"
+              onClick={toggleMenu}
+              className={
+                isMenuOpen
+                  ? `${css.navLink} ${css.showNavLink}`
+                  : `${css.closeNavLink}`
+              }
+            >
+              Secrets of Taste
+            </NavLink>
+
+            <NavLink
+              to="/contacts"
+              onClick={toggleMenu}
+              className={
+                isMenuOpen
+                  ? `${css.navLink} ${css.showNavLink}`
+                  : `${css.closeNavLink}`
+              }
+            >
+              Contacts
+            </NavLink>
+
+            <NavLink
+              to="/favorites"
+              onClick={toggleMenu}
+              className={
+                isMenuOpen
+                  ? `${css.navLink} ${css.showNavLink}`
+                  : `${css.closeNavLink}`
+              }
+            >
+              Favorite dishes
+            </NavLink>
           </div>
         </nav>
       </header>

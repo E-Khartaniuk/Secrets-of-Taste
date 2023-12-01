@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.footerSotialiconSection {
+.footerSotialSection {
   display: flex;
   flex-direction: row;
   gap: 12px;
@@ -60,4 +60,24 @@
   color: #797979;
   width: 150px;
   margin: 0 auto;
+}
+
+@media (max-width: 719px) {
+  .footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contactThumb {
+    margin-right: 0;
+  }
+
+  .footerSotialSection {
+    margin-left: 0;
+  }
+
+  .copirite {
+    margin-top: 12px;
+  }
 }

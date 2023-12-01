@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer className={css.footer}>
       <div className={css.footerContainer}>
-        <div className={css.footerSotialiconSection}>
+        <div className={css.footerSotialSection}>
           <a
             href="https://www.instagram.com/"
             target="_blank"
@@ -65,6 +65,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <a
         href="https://www.linkedin.com/in/yevhenii-khartaniuk-45b279251/"
         className={css.copirite}

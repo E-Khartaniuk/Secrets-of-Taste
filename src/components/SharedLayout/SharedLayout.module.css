@@ -1,4 +1,5 @@
 .mainContainer {
+  position: relative;
   display: flex;
   padding: 0 24px;
   min-height: 90vh;
@@ -24,8 +25,6 @@
   margin-right: 40px;
 }
 
-/* fff */
-
 .navLink:hover {
   color: white;
 }
@@ -37,7 +36,7 @@
   left: 50%;
   width: 0;
   height: 1px;
-  background-color: #fff; /* Цвет подчеркивания */
+  background-color: #fff;
   transition: width 0.25s ease-in-out, left 0.25s ease-in-out;
 }
 
@@ -46,9 +45,68 @@
   left: 0;
 }
 
-/* ffff */
-
 .activeLink {
   text-decoration: dashed;
   border-bottom: solid 1px white;
+}
+
+.mobilemenu {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  top: 0;
+  left: 0;
+
+  padding-top: 30px;
+  padding-left: 16px;
+}
+
+.openMenu {
+  /* background-color: #ffb2b2; */
+  background-color: var(--main-color);
+  margin-left: 0px;
+}
+
+.closeMenu {
+  transition: margin-left 0.3s;
+}
+
+.showNavLink {
+  display: inline;
+}
+
+.closeNavLink {
+  display: none;
+}
+
+.scrollLock {
+  overflow: hidden;
+}
+
+.mobileMenuCloseBtn {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  right: 8px;
+  top: 8px;
+}
+
+@media (max-width: 1279px) {
+  .linkContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 1279px) {
+  .mobileMenuOpenBtn {
+    display: none;
+  }
+
+  .mobilemenu {
+    display: none;
+  }
 }

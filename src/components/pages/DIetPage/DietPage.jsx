@@ -12,18 +12,24 @@ function DietPage() {
   const { query } = useParams();
 
   useEffect(() => {
-    // setQueryList([]);
-    FetchDiet(query).then(res => {
+    setPage(1);
+    setQueryList([]);
+
+    const fetchData = async () => {
+      const res = await FetchDiet(query, 1);
       setQueryList(res.data.results);
-    });
+    };
+
+    fetchData();
   }, [query]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
   };
 
-  const handleLoadMore = () => {
-    setPage(page + 1);
+  const handleLoadMore = async () => {
+    setPage(prevPage => prevPage + 1);
+
     FetchDiet(query, page).then(res => {
       setQueryList(prev => [...prev, ...res.data.results]);
     });
