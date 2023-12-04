@@ -36,7 +36,6 @@ function SharedLayout() {
             >
               Secrets of Taste
             </NavLink>
-
             <NavLink
               to="/contacts"
               onClick={() => handleSetActivePage('Contacts')}
@@ -48,7 +47,6 @@ function SharedLayout() {
             >
               Contacts
             </NavLink>
-
             <NavLink
               to="/favorites"
               onClick={() => handleSetActivePage('Favorite')}
@@ -60,15 +58,24 @@ function SharedLayout() {
             >
               Favorite dishes
             </NavLink>
-
             <DropDownMenu />
-
-            <SearchInput />
+            <SearchInput />{' '}
+            <div
+              className={`${css.burger_icon} ${
+                isMenuOpen ? `${css.open}` : ''
+              }`}
+              onClick={toggleMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
 
           <button onClick={toggleMenu} className={css.mobileMenuOpenBtn}>
             open menu
           </button>
+
           <div
             className={
               isMenuOpen
@@ -86,6 +93,7 @@ function SharedLayout() {
             >
               close menu
             </button>
+
             <NavLink
               to="/"
               onClick={toggleMenu}

@@ -7,12 +7,12 @@ import FetchDiet from 'components/Utils/FetchDiet';
 function DietPage() {
   const navigate = useNavigate();
   const [queryList, setQueryList] = useState([]);
-  const [page, setPage] = useState(1);
+  const [offset, setOffset] = useState(5);
 
   const { query } = useParams();
 
   useEffect(() => {
-    setPage(1);
+    setOffset(5);
     setQueryList([]);
 
     const fetchData = async () => {
@@ -28,15 +28,15 @@ function DietPage() {
   };
 
   const handleLoadMore = async () => {
-    setPage(prevPage => prevPage + 1);
+    setOffset(prevOffset => prevOffset + 5);
 
-    FetchDiet(query, page).then(res => {
+    FetchDiet(query, offset).then(res => {
       setQueryList(prev => [...prev, ...res.data.results]);
     });
   };
 
   return (
-    <>
+    <section className={css.dietFooSection}>
       <ul className={css.dishesList}>
         {queryList.map(oneDish => {
           return (
@@ -56,7 +56,7 @@ function DietPage() {
       >
         Load more
       </button>
-    </>
+    </section>
   );
 }
 

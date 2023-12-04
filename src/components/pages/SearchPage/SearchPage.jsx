@@ -17,17 +17,20 @@ function SearchPage() {
     navigate(`/recipe/${recipeId}`);
   };
   return (
-    <ul className={css.dishesList}>
-      {queryList.map(oneDish => {
-        return (
-          <FoodCard
-            key={oneDish.id}
-            cardInfo={oneDish}
-            handleOpenFullRecipe={handleOpenFullRecipe}
-          ></FoodCard>
-        );
-      })}
-    </ul>
+    <>
+      <h1 className={css.title}> {query}:</h1>
+      <ul className={css.dishesList}>
+        {queryList.map(oneDish => {
+          return (
+            <FoodCard
+              key={oneDish.id}
+              cardInfo={oneDish}
+              handleOpenFullRecipe={handleOpenFullRecipe}
+            ></FoodCard>
+          );
+        })}
+      </ul>
+    </>
   );
 }
 

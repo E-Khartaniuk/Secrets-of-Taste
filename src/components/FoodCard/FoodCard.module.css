@@ -1,5 +1,6 @@
 .oneDishCard {
   width: 200px;
+  width: calc(1340px / 6);
   height: 300px;
   border-style: solid;
   border-color: rgb(204, 204, 204);
@@ -39,6 +40,7 @@
 
 .dishElement {
   position: relative;
+  padding: 0;
 }
 
 .favBtn {
