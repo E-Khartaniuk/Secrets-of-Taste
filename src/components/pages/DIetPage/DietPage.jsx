@@ -37,6 +37,7 @@ function DietPage() {
 
   return (
     <section className={css.dietFooSection}>
+      <h1> {query}:</h1>
       <ul className={css.dishesList}>
         {queryList.map(oneDish => {
           return (

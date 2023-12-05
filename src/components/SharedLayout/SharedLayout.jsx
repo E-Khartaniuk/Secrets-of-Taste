@@ -17,7 +17,6 @@ function SharedLayout() {
 
   const toggleMenu = e => {
     setIsMenuOpen(!isMenuOpen);
-    // document.body.classList.toggle('scrollLock', isMenuOpen);
   };
 
   return (
@@ -60,40 +59,20 @@ function SharedLayout() {
             </NavLink>
             <DropDownMenu />
             <SearchInput />{' '}
-            <div
-              className={`${css.burger_icon} ${
-                isMenuOpen ? `${css.open}` : ''
-              }`}
-              onClick={toggleMenu}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
           </div>
 
-          <button onClick={toggleMenu} className={css.mobileMenuOpenBtn}>
-            open menu
-          </button>
+          <div
+            className={`${css.burger_icon} ${isMenuOpen ? `${css.open}` : ''}`}
+            onClick={toggleMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
           <div
-            className={
-              isMenuOpen
-                ? `${css.mobilemenu} ${css.openMenu}`
-                : `${css.closeMenu}`
-            }
+            className={isMenuOpen ? `${css.mobilemenu} ${css.openMenu}` : ``}
           >
-            <button
-              onClick={toggleMenu}
-              className={
-                isMenuOpen
-                  ? `${css.mobileMenuCloseBtn} ${css.showNavLink}`
-                  : `${css.closeNavLink}`
-              }
-            >
-              close menu
-            </button>
-
             <NavLink
               to="/"
               onClick={toggleMenu}

@@ -1,7 +1,6 @@
 .dietFooSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .dishesList {
@@ -29,4 +28,16 @@
 
 .loadMoreBtn:hover {
   background-color: var(--hover-color);
+}
+
+@media (max-width: 1439px) {
+  .dishesList {
+    width: 720px;
+  }
+}
+
+@media (max-width: 719px) {
+  .dishesList {
+    width: 480px;
+  }
 }

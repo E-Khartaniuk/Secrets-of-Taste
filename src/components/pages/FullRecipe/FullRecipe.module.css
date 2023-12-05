@@ -22,6 +22,7 @@
 .title {
   font-size: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 24px;
 }
 
 .ingredientsSection {
@@ -31,6 +32,7 @@
 .ingredientsSectionTitle {
   margin-top: 22px;
   margin-bottom: 22px;
+  margin-left: 24px;
 }
 
 .ingredientImg {
@@ -87,6 +89,7 @@
 .instructions {
   margin-top: 22px;
   border-top: solid 1px rgba(189, 189, 189, 0.5);
+  padding: 0 24px;
 }
 
 @media (min-width: 1440px) {
@@ -110,10 +113,44 @@
   .recipeProperty {
     padding: 10px;
   }
+
+  .fullRecipeContainer {
+    width: 720px;
+  }
+
+  .listContainer {
+    flex-direction: column;
+    padding: 0 24px;
+  }
+
+  .title {
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 24px;
+  }
+
+  .favBtn {
+    right: 70px;
+  }
 }
 
 @media (max-width: 719px) {
   .container {
     width: 480px;
+  }
+  .fullRecipeContainer {
+    width: 480px;
+  }
+
+  .imgContainer {
+    width: 480px;
+  }
+
+  .recipeImg {
+    height: 300px;
+  }
+
+  .favBtn {
+    right: 24px;
   }
 }
