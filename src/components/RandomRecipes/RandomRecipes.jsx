@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import fetchRandomRecipes from 'components/Utils/fetchRandomRecipes';
 import css from './RandomRecipes.module.css';
-import cardCSS from '../oneDish/OneDish.module.css';
 
 import { useNavigate } from 'react-router-dom';
 import FoodCard from 'components/FoodCard/FoodCard';
@@ -38,7 +37,6 @@ function RandomRecipes() {
               <FoodCard
                 key={oneDish.id}
                 cardInfo={oneDish}
-                className={cardCSS.oneDishCard}
                 handleOpenFullRecipe={handleOpenFullRecipe}
               ></FoodCard>
             );
