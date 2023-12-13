@@ -6,7 +6,6 @@ import RecipeInstructions from 'components/RecipeInstructions/RecipeInstructions
 import SimilarRecipes from 'components/SimilarRecipes/SimilarRecipes';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from 'components/redux/dishesSlice';
-// import NutritionById from 'components/NutritionById/NutritionById';
 
 function FullRecipe() {
   const [fullRecipe, setFullRecipe] = useState([]);
