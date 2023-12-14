@@ -7,7 +7,7 @@ import FetchDiet from 'components/Utils/FetchDiet';
 function DietPage() {
   const navigate = useNavigate();
   const [queryList, setQueryList] = useState([]);
-  const [offset, setOffset] = useState(5);
+  const [offset, setOffset] = useState(26);
 
   const { query } = useParams();
 
@@ -28,7 +28,7 @@ function DietPage() {
   };
 
   const handleLoadMore = async () => {
-    setOffset(prevOffset => prevOffset + 5);
+    setOffset(prevOffset => prevOffset + 26);
 
     FetchDiet(query, offset).then(res => {
       setQueryList(prev => [...prev, ...res.data.results]);

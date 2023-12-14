@@ -7,8 +7,8 @@ import SelectCategoryBtn from 'components/SelectCategoryBtn/SelectCategoryBtn';
 function Home() {
   return (
     <div className={css.container}>
-      {/* <h1>Your diversity in food</h1> */}
       <SelectCategoryBtn />
+      <h1>Random dishes for you</h1>
       <RandomRecipes />
     </div>
   );
