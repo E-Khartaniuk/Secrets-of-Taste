@@ -9,6 +9,7 @@ function Home() {
     <div className={css.container}>
       <SelectCategoryBtn />
       <h1>Random dishes for you</h1>
+
       <RandomRecipes />
     </div>
   );

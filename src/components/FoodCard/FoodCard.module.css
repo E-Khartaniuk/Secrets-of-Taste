@@ -19,8 +19,15 @@
 
 .cardTitle {
   width: 90%;
-  height: 60px;
-  padding: 10px;
+  /* height: 60px; */
+  padding: 0 10px;
+
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: wrap; /* Запрет переноса строк */
+  text-overflow: ellipsis; /* Добавление многоточия при переполнении */
+  max-width: 100%; /* Ограничение максимальной ширины */
+  -webkit-line-clamp: 2;
 }
 
 .cardImg {
@@ -56,4 +63,10 @@
 
 .favBtn:hover {
   scale: 1.1;
+}
+
+.cookingTime {
+  width: 90%;
+
+  padding: 0 10px;
 }

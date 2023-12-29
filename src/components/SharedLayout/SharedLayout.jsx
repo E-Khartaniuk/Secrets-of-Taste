@@ -5,6 +5,7 @@ import css from './SharedLayout.module.css';
 import SearchInput from 'components/SearchInput/SearchInput';
 import DropDownMenu from 'components/Menu/DropDownMenu';
 import Footer from 'components/Footer/Footer';
+import ThemeToggle from 'components/ToggleTheme/ToggleTheme';
 
 function SharedLayout() {
   const [activePage, setActivePage] = useState('');
@@ -110,6 +111,7 @@ function SharedLayout() {
             </NavLink>
           </div>
         </nav>
+        <ThemeToggle />
       </header>
       <main className={css.mainContainer}>
         <Outlet />

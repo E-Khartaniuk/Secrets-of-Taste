@@ -24,6 +24,7 @@ function FoodCard({ cardInfo, handleOpenFullRecipe }) {
       <div onClick={() => handleOpenFullRecipe(id)} className={css.oneDishCard}>
         <img src={image} alt={title} className={css.cardImg} />
         <h3 className={css.cardTitle}>{title}</h3>
+        {/* <p className={css.cookingTime}>Cooking time</p> */}
       </div>
     </li>
   );
