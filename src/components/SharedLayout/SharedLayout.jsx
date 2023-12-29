@@ -111,7 +111,7 @@ function SharedLayout() {
             </NavLink>
           </div>
         </nav>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </header>
       <main className={css.mainContainer}>
         <Outlet />
