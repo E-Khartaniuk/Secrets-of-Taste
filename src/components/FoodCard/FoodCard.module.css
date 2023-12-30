@@ -4,30 +4,26 @@
   height: 300px;
   border-style: solid;
   border-color: rgb(204, 204, 204);
+  /* border: none; */
   border-width: 1px;
   background-color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
   transition: color 0.3s ease;
-  transition: background-color 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .oneDishCard:hover {
-  color: white;
-  background-color: var(--main-color);
+  border-color: rgb(63, 63, 63);
+  /* background-color: rgba(32, 73, 80, 0.295); */
+  /* color: white;
+  background-color: var(--main-color); */
 }
 
 .cardTitle {
   width: 90%;
-  /* height: 60px; */
+  max-height: 40px;
   padding: 0 10px;
-
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  white-space: wrap; /* Запрет переноса строк */
-  text-overflow: ellipsis; /* Добавление многоточия при переполнении */
-  max-width: 100%; /* Ограничение максимальной ширины */
-  -webkit-line-clamp: 2;
 }
 
 .cardImg {
@@ -41,9 +37,9 @@
   transition: width 0.3s ease;
 }
 
-.oneDishCard:hover img {
+/* .oneDishCard:hover img {
   width: 94%;
-}
+} */
 
 .dishElement {
   position: relative;
