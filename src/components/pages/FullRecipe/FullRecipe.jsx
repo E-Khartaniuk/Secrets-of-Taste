@@ -97,8 +97,6 @@ function FullRecipe() {
       <section className={css.instructions}>
         <SimilarRecipes similarID={id} />
       </section>
-
-      {/* <NutritionById id={id}></NutritionById> */}
     </div>
   );
 }
