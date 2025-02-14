@@ -45,29 +45,19 @@ function FullRecipe() {
             Cooking time: {fullRecipe.readyInMinutes} minutes
           </p>
 
-          {fullRecipe.vegetarian ? (
-            <p className={css.recipeProperty}>Vegetarian</p>
-          ) : (
-            <p className={css.recipeProperty}>Vegetarian: no</p>
-          )}
+          <p className={css.recipeProperty}>
+            {fullRecipe.vegetarian ? 'Vegetarian' : 'Vegetarian: no'}
+          </p>
+          <p className={css.recipeProperty}>
+            {fullRecipe.vegetarian ? 'Vegan' : 'Vegan: no'}
+          </p>
 
-          {fullRecipe.vegan ? (
-            <p className={css.recipeProperty}>Vegan</p>
-          ) : (
-            <p className={css.recipeProperty}>Vegan: no</p>
-          )}
-
-          {fullRecipe.veryHealthy ? (
-            <p className={css.recipeProperty}>Healthy</p>
-          ) : (
-            <p className={css.recipeProperty}>Unhealthy</p>
-          )}
-
-          {fullRecipe.glutenFree ? (
-            <p className={css.recipeProperty}>Gluten free</p>
-          ) : (
-            <p className={css.recipeProperty}>Gluten free: no</p>
-          )}
+          <p className={css.recipeProperty}>
+            {fullRecipe.vegetarian ? 'Healthy' : 'Unhealthy'}
+          </p>
+          <p className={css.recipeProperty}>
+            {fullRecipe.vegetarian ? 'Gluten free' : 'Gluten free: no'}
+          </p>
         </div>
       </div>
 
