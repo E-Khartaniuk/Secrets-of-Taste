@@ -23,14 +23,14 @@
 .navLink {
   position: relative;
   text-decoration: none;
-  color: white;
+  color: var(--text-color);
   font-size: 24px;
   margin-right: 40px;
 }
 
-.navLink:hover {
-  color: white;
-}
+/* .navLink:hover {
+  color: var(--text-color);
+} */
 
 .navLink::before {
   content: '';
@@ -39,7 +39,7 @@
   left: 50%;
   width: 0;
   height: 1px;
-  background-color: #fff;
+  background-color: var(--text-color);
   transition: width 0.25s ease-in-out, left 0.25s ease-in-out;
 }
 
@@ -50,7 +50,7 @@
 
 .activeLink {
   text-decoration: dashed;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px var(--text-color);
 }
 
 .mobilemenu {
@@ -62,12 +62,10 @@
   flex-direction: column;
   gap: 12px;
   top: 0;
-  /* left: -300px; */
-  /* transform: translateX(-300px); */
+
   padding-top: 60px;
   padding-left: 16px;
 
-  /* transition: 0.4s; */
   background-color: var(--main-color);
 }
 
@@ -99,7 +97,7 @@
 .burger_icon span {
   height: 3px;
   width: 25px;
-  background-color: #ffffff;
+  background-color: var(--text-color);
   margin: 2px 0;
   transition: 0.4s;
   z-index: 2;

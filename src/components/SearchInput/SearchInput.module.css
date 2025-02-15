@@ -5,7 +5,7 @@
 .inputSearch {
   padding: 5px;
   border-radius: 4px;
-  color: white;
+  color: var(--text-color);
   background-color: var(--main-color);
   outline: none;
   border: solid 1px var(--border-color);
@@ -13,19 +13,19 @@
 }
 
 .inputSearch:focus {
-  border: solid 1px #ffffff;
+  border: solid 1px var(--text-color);
   background-color: var(--main-color);
 }
 
 .inputSearch:hover {
-  border: solid 1px #ffffff;
+  border: solid 1px var(--text-color);
   background-color: var(--hover-color);
 }
 
 .searchBtn {
   margin-left: 14px;
   padding: 5px;
-  color: white;
+  color: var(--text-color);
   border-radius: 4px;
   background-color: var(--main-color);
   border: solid 1px var(--border-color);

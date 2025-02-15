@@ -23,14 +23,14 @@
   width: 35px;
   height: 35px;
   border-radius: 8px;
-  outline: solid 2px var(--main-color);
+  outline: solid 2px var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .socialIconContainer:hover {
-  outline: dashed 2px var(--main-color);
+  outline: dashed 2px var(--text-color);
 }
 
 .socialImg {
@@ -40,11 +40,11 @@
 }
 
 .contactItem {
-  color: var(--main-color);
+  color: var(--text-color);
   text-decoration: none;
 }
 .contactPreText {
-  color: var(--main-color);
+  color: var(--text-color);
   font-weight: 600;
   margin-right: 12px;
 }

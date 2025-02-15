@@ -259,8 +259,11 @@ ul {
 }
 
 :root {
-  --main-color: rgb(9, 65, 75);
+  --main-color: rgb(231, 249, 255);
+  /* --main-color: rgb(9, 65, 75); */
   --secondary-color: rgb(88, 120, 126);
-  --hover-color: rgb(14, 83, 95);
+  --hover-color: rgba(14, 83, 95, 0.267);
   --border-color: rgb(88, 120, 126);
+
+  --text-color: black;
 }

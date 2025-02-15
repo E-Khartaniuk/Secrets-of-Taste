@@ -22,6 +22,7 @@ function SearchInput() {
         value={searchQuery}
         className={css.inputSearch}
         onChange={getQuery}
+        placeholder="search..."
       />
       <button
         type="submit"
