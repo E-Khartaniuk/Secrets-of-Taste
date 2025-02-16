@@ -8,13 +8,13 @@
 .oneDishCard {
   width: 200px;
   width: calc(1340px / 6);
-  height: 300px;
-  /* border-style: solid; */
-  /* border-color: rgb(204, 204, 204); */
-  /* border: none; */
+  height: 250px;
+  margin: 0;
+
+  border-style: solid;
+  border-color: rgb(238, 238, 238);
   border-width: 1px;
   background-color: #ffffff63;
-  /* border-radius: 8px; */
   cursor: pointer;
   transition: color 0.3s ease;
   transition: border-color 0.3s ease;
@@ -24,7 +24,7 @@
 }
 
 .oneDishCard:hover {
-  border-color: rgb(63, 63, 63);
+  border-color: rgb(197, 197, 197);
   -webkit-box-shadow: 0px -4px 67px -28px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px -4px 67px -28px rgba(0, 0, 0, 0.75);
   box-shadow: 0px -4px 67px -28px rgba(0, 0, 0, 0.75);
@@ -32,21 +32,20 @@
 
 .cardTitle {
   width: 90%;
-  height: 60px;
-  padding: 10px;
+  padding: 0 10px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cardImg {
   display: block;
-  width: 90%;
+  width: 100%;
 
-  border-radius: 10px;
-  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
   transition: width 0.3s ease;
-}
-
-.oneDishCard:hover img {
-  width: 94%;
 }

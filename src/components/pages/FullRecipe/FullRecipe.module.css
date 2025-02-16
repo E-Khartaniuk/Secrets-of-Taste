@@ -49,7 +49,7 @@
 
 .recipeProperty {
   padding: 10px;
-  color: white;
+  color: var(--text-color);
   background-color: var(--main-color);
   border-radius: 5px;
   padding-left: 12px;
@@ -86,7 +86,8 @@
   outline: solid 2px var(--main-color);
 }
 
-.instructions {
+.instructions,
+.similarRecipes {
   margin-top: 22px;
   border-top: solid 1px rgba(189, 189, 189, 0.5);
   padding: 0 24px;

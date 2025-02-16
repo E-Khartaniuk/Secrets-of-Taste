@@ -18,7 +18,7 @@
   display: block;
   border: none;
   background-color: var(--main-color);
-  color: white;
+  color: var(--text-color);
   font-size: 20px;
   padding: 12px 22px;
   border-radius: 6px;

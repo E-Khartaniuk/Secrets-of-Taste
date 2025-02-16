@@ -94,7 +94,7 @@ function FullRecipe() {
         )}
       </section>
 
-      <section className={css.instructions}>
+      <section className={css.similarRecipes}>
         <SimilarRecipes similarID={id} />
       </section>
     </div>
