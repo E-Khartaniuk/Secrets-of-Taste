@@ -9,10 +9,15 @@ function DishesList() {
   const [food, setFood] = useState([]);
 
   useEffect(() => {
-    fetchData().then(res => setFood(res.data.results));
+    fetchData()
+      .then(res => setFood(res.data.results))
+      .catch(error => {
+        if (error === 402) navigate('/apierror');
+      });
   }, []);
 
   const handleOpenFullRecipe = recipeId => {
+    // if (!food) navigate('/apierror');
     navigate(`/recipe/${recipeId}`);
   };
 

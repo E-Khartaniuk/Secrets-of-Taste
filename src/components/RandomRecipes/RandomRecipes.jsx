@@ -12,9 +12,13 @@ function RandomRecipes() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetchRandomRecipes().then(res => {
-      setFood(res.data.recipes);
-    });
+    fetchRandomRecipes()
+      .then(res => {
+        setFood(res.data.recipes);
+      })
+      .catch(error => {
+        if (error === 402) navigate('/apierror');
+      });
   }, []);
 
   const handleOpenFullRecipe = recipeId => {

@@ -6,5 +6,7 @@ export default function FetchById(id) {
     const response = axios.get(URL);
 
     return response;
-  } catch (error) {}
+  } catch (error) {
+    throw error.response.status;
+  }
 }

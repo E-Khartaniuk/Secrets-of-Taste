@@ -1,6 +1,6 @@
 import FetchFullRecipe from 'components/Utils/FetchFullRecipe';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import css from './FullRecipe.module.css';
 import RecipeInstructions from 'components/RecipeInstructions/RecipeInstructions';
 import SimilarRecipes from 'components/SimilarRecipes/SimilarRecipes';
@@ -12,6 +12,8 @@ function FullRecipe() {
   const { id } = useParams();
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const favoriteItems = useSelector(state => state.dishes.favoriteItems);
   const isFavorite = favoriteItems.some(item => item.id === Number(id));
 
@@ -20,10 +22,14 @@ function FullRecipe() {
   };
 
   useEffect(() => {
-    FetchFullRecipe(id).then(res => {
-      setFullRecipe(res.data);
-    });
-  }, [id]);
+    FetchFullRecipe(id)
+      .then(res => {
+        setFullRecipe(res.data);
+      })
+      .catch(error => {
+        if (error === 402) navigate('/apierror');
+      });
+  }, [id, navigate]);
 
   return (
     <div className={css.fullRecipeContainer}>

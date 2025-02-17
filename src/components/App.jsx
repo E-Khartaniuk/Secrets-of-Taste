@@ -6,6 +6,7 @@ import Contacts from './pages/Contacts/Contacts';
 import SearchPage from './pages/SearchPage/SearchPage';
 import DietPage from './pages/DIetPage/DietPage';
 import FavoriteDishes from './pages/FavoriteDishes/FavoriteDishes';
+import APIError from './pages/APIError/APIError';
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
         <Route path="search/:query" element={<SearchPage />} />
         <Route path="diet/:query" element={<DietPage />} />
         <Route path="favorites" element={<FavoriteDishes />} />
+        <Route path="apierror" element={<APIError />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

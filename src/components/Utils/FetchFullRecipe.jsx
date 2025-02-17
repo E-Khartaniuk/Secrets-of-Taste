@@ -6,6 +6,8 @@ const FetchFullRecipe = async id => {
     const response = await axios.get(URL);
 
     return response;
-  } catch (error) {}
+  } catch (error) {
+    throw error.response.status;
+  }
 };
 export default FetchFullRecipe;

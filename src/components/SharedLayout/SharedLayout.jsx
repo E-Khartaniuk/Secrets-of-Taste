@@ -1,24 +1,58 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-
 import css from './SharedLayout.module.css';
-import SearchInput from 'components/SearchInput/SearchInput';
 import DropDownMenu from 'components/Menu/DropDownMenu';
-import Footer from 'components/Footer/Footer';
-// import ThemeToggle from 'components/ToggleTheme/ToggleTheme';
+import SearchInput from 'components/SearchInput/SearchInput';
 
 function SharedLayout() {
   const [activePage, setActivePage] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const burgerIconRef = useRef(null);
 
   const handleSetActivePage = page => {
-    setActivePage(``);
+    setActivePage('');
     setActivePage(page);
   };
 
-  const toggleMenu = e => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(prevState => {
+      const newState = !prevState;
+      if (newState) {
+        document.body.classList.add(css.scrollLock);
+      } else {
+        document.body.classList.remove(css.scrollLock);
+      }
+      return newState;
+    });
   };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.classList.remove(css.scrollLock);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !burgerIconRef.current.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -59,10 +93,11 @@ function SharedLayout() {
               Favorite dishes
             </NavLink>
             <DropDownMenu />
-            <SearchInput />{' '}
+            <SearchInput />
           </div>
 
           <div
+            ref={burgerIconRef}
             className={`${css.burger_icon} ${isMenuOpen ? `${css.open}` : ''}`}
             onClick={toggleMenu}
           >
@@ -72,7 +107,8 @@ function SharedLayout() {
           </div>
 
           <div
-            className={isMenuOpen ? `${css.mobilemenu} ${css.openMenu}` : ``}
+            ref={menuRef}
+            className={isMenuOpen ? `${css.mobilemenu} ${css.openMenu}` : ''}
           >
             <NavLink
               to="/"
@@ -111,13 +147,10 @@ function SharedLayout() {
             </NavLink>
           </div>
         </nav>
-        {/* <ThemeToggle /> */}
       </header>
       <main className={css.mainContainer}>
         <Outlet />
       </main>
-
-      <Footer />
     </>
   );
 }

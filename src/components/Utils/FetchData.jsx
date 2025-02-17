@@ -6,5 +6,7 @@ export default function fetchData(query) {
     const response = axios.get(URL);
 
     return response;
-  } catch (error) {}
+  } catch (error) {
+    throw error.response.status;
+  }
 }

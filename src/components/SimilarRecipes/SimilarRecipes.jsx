@@ -10,9 +10,13 @@ function SimilarRecipes({ similarID }) {
   const [food, setFood] = useState([]);
 
   useEffect(() => {
-    fetchSimilar(similarID).then(res => {
-      setFood(res.data);
-    });
+    fetchSimilar(similarID)
+      .then(res => {
+        setFood(res.data);
+      })
+      .catch(error => {
+        if (error === 402) navigate('/apierror');
+      });
   }, [similarID]);
 
   const handleOpenFullRecipe = recipeId => {

@@ -20,7 +20,9 @@ function DietPage() {
       setQueryList(res.data.results);
     };
 
-    fetchData();
+    fetchData().catch(error => {
+      if (error === 402) navigate('/apierror');
+    });
   }, [query]);
 
   const handleOpenFullRecipe = recipeId => {
