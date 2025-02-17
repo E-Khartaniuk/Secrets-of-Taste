@@ -23,7 +23,7 @@ function DietPage() {
     fetchData().catch(error => {
       if (error === 402) navigate('/apierror');
     });
-  }, [query]);
+  }, [query, navigate]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);

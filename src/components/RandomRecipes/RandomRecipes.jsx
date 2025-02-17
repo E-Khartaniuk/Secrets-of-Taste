@@ -19,7 +19,7 @@ function RandomRecipes() {
       .catch(error => {
         if (error === 402) navigate('/apierror');
       });
-  }, []);
+  }, [navigate]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);

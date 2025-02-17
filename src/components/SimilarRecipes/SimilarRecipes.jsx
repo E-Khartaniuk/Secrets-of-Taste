@@ -17,7 +17,7 @@ function SimilarRecipes({ similarID }) {
       .catch(error => {
         if (error === 402) navigate('/apierror');
       });
-  }, [similarID]);
+  }, [similarID, navigate]);
 
   const handleOpenFullRecipe = recipeId => {
     navigate(`/recipe/${recipeId}`);
